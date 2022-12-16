@@ -3,6 +3,7 @@
 ## Overview of analysis
 ### Purpose
 The purpose of this project is to provide a webpage for users to be able to search through reported UFO sightings. For ease and an indepth analysis, a filter has been provided to search by date, city, state, country, and shape.
+
 ###Technology used
 JavaScript, Bootstrap
 
