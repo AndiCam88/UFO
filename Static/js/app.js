@@ -10,7 +10,7 @@ function buildTable(data) {
 
   // Next, loop through each object in the data
   // and append a row and cells for each value in the row
-  data.forEach((dataRow) => {
+tableData.forEach((dataRow) => {
     // Append a row to the table body
     let row = tbody.append("tr");
 
@@ -36,7 +36,7 @@ function updateFilters() {
     console.log(filter);
     // 4c. Save the id of the filter that was changed as a variable.
     let id = change.property("id");
-    console.log(id);
+   
     // 5. If a filter value was entered then add that filterId and value
     // to the filters list. Otherwise, clear that filter from the filters object.
     if (filter){
@@ -54,12 +54,12 @@ function updateFilters() {
   function filterTable() {
   
     // 8. Set the filtered data to the tableData.
-    filteredData = filterTable
+    filteredData = tableData
   
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-    Object.entries(filters).forEach((val) => {
-    filteredData = filteredData.filter(row => row.change === filters);
+    Object.entries(filters).forEach(([key, val]) => {
+    filteredData = filteredData.filter(row => row[key] === val);
     })
     // 10. Finally, rebuild the table using the filtered data
     buildTable(filteredData)
